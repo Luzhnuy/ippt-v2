@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row no-gutters justify-content-between align-items-center">
             <div class="logo">
-                <a href="index.php" title="Головна">
-                    <img src="sources/img/logo" alt="logo">
+                <a href="{{ route('main') }}" title="Головна">
+                    <img src="{{ asset("/img/logo.png")}}" alt="logo">
                     <span>Інститут підприємництва та перспективних технологій</span>
                 </a>
             </div>
@@ -14,10 +14,10 @@
                 <span class="nav-line"></span>
             </button>
 
-            <nav class="navbar" id="navbar">
+            <nav id="navbar">
                 <ol class="navbar-collapse" id="navbar-collapse">
                     <li class="nav-item active">
-                        <a href="index.php">Головна</a>
+                        <a href="{{ route('main') }}">Головна</a>
                     </li>
                     <li class="nav-item">
                         <a href="entrant.php">Вступнику</a>
@@ -26,10 +26,11 @@
                         <a href="student.php">Студенту</a>
                     </li>
                     <li class="nav-item">
-                        <a href="news-archive.php">Новини</a>
+                        <a href="{{ route('news') }}">Новини</a>
                     </li>
                 </ol>
             </nav>
+
         </div>
     </div>
 </header>

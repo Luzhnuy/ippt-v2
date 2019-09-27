@@ -13,19 +13,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{{--    <link rel="icon" href="/logo.png" type="image/x-icon">--}}
-{{--    <link rel="shortcut icon" href="sources/img/logo.png" type="image/x-icon">--}}
+   <link rel="icon" href="/logo.png" type="image/x-icon">
+   <link rel="shortcut icon" href='{{ asset("/img/logo.png")}}' type="image/x-icon">
 
-{{--    <!-- Normalize css -->--}}
-{{--    <link rel="stylesheet" href="sources/css/normalize.min.css">--}}
 
-{{--    <!-- Bootstrap styles -->--}}
-{{--    <link rel="stylesheet" href="sources/css/bootstrap-grid.min.css">--}}
+   <link rel="stylesheet" href="{{ asset("/slick/slick.css") }}">
+   <link rel="stylesheet" href="{{ asset("/slick/slick-theme.css") }}">
 
-{{--    <!-- Slick library -->--}}
-{{--    <link rel="stylesheet" href="sources/slick/slick.css">--}}
-{{--    <link rel="stylesheet" href="sources/slick/slick-theme.css">--}}
 
-{{--    <!-- My styles -->--}}
-    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+  <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 </head>

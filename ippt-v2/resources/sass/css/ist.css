@@ -139,7 +139,7 @@ hr{
 
 .blur-bg{
 	z-index: 99; /* изображение размыто */
-    /*background-image: url(/img/image.png);*/
+    background-image: url(/img/image.png);
     background-size: cover;
     background-repeat: no-repeat;
     -webkit-filter: blur(5px);

@@ -17,7 +17,15 @@ class NewsController extends Controller
     public function showAll()
     {
         $news = $this->newsRepository->getAll();
-        return view('test', ['news' => $news]);
+        return view('pages.news-archive', ['news' => $news]);
+    }
+
+    public function detail($id)
+    {
+        $news = $this->newsRepository->getOne($id);
+        $lastNews = $this->newsRepository->getLast(4);
+
+        return view('pages.news', ['news' => $news, 'lastNews' => $lastNews, ]);
     }
 
     public function showRandom()

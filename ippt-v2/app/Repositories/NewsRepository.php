@@ -40,4 +40,9 @@ class NewsRepository implements Post
         return $this->getOne($this->random());
     }
 
+    public function getByCategory($categoryId)
+    {
+      return $this->news->where("type_of_new", $categoryId)->get();
+    }
+
 }

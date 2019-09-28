@@ -5,7 +5,9 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/', 'PageController@showMain')->name('main');
-Route::get('about-us', 'PageController@showAbout');
+Route::get('about-us', 'PageController@showAbout')->name('about');
+Route::get('education-science', 'PageController@showEducationScience')->name('educationScience');
+Route::get('student-college', 'PageController@showStudentCollege')->name('studentCollege');
 
 Route::group(['prefix' => 'news'], function () {
 

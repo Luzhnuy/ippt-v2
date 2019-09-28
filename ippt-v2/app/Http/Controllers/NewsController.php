@@ -17,6 +17,7 @@ class NewsController extends Controller
     public function showAll()
     {
         $news = $this->newsRepository->getAll();
+
         return view('pages.news-archive', ['news' => $news]);
     }
 

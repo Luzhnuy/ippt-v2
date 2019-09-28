@@ -34,4 +34,18 @@ class PageController extends Controller
     return view('pages.static.about-us');
   }
 
+  public function showEducationScience()
+  {
+    return view('pages.static.education-science');
+  }
+
+  public function showStudentCollege()
+  {
+    $news = $this->newsRepository->getByCategory(1);
+
+    return view('pages.student_college.student-college', [
+      'news' => $news,
+    ]);
+  }
+
 }

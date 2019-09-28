@@ -50,13 +50,13 @@
             <h2>Інформація про нас</h2>
             <div class="about-us-container">
                 <div class="about-us-item">
-                    <a href="about-us.php">
+                    <a href="{{ route('about') }}">
                         <div class="about-us-icon institut-icon"></div>
                         <span>Про інститут</span>
                     </a>
                 </div>
                 <div class="about-us-item">
-                    <a href="education-science.php">
+                    <a href="{{ route('educationScience') }}">
                         <div class="about-us-icon education-science-icon"></div>
                         <span>Освіта та Наука</span>
                     </a>

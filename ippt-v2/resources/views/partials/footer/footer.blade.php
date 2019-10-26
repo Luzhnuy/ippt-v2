@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer-contacts">
             <a href="index.php" title="Головна">
-                <img src="sources/img/logo" alt="logo">
+                <img src="{{ asset('/img/logo.png')}}" alt="logo">
             </a>
             <div>
                 <span><span>Адреса:</span> 79044, м. Львів, </span>

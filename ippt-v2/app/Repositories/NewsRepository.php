@@ -45,4 +45,6 @@ class NewsRepository implements Post
       return $this->news->where("type_of_new", $categoryId)->get();
     }
 
+
+
 }

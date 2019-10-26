@@ -8,8 +8,43 @@
     <!-- Preloader -->
 		@include('components.static-components.preloader')
 
-    <!-- Header -->
-    @include('partials.head.header')
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row no-gutters justify-content-between align-items-center">
+                <div class="logo">
+                    <a href="{{ route('main') }}" title="Головна">
+                        <img src="{{ asset("/img/logo.png")}}" alt="logo">
+                        <span>Інститут підприємництва та перспективних технологій</span>
+                    </a>
+                </div>
+
+                <button class="navbar-toggle" id="navbar-toggle">
+                    <span class="nav-line"></span>
+                    <span class="nav-line"></span>
+                    <span class="nav-line"></span>
+                </button>
+
+                <nav id="navbar">
+                    <ol class="navbar-collapse" id="navbar-collapse">
+                        <li class="nav-item">
+                            <a href="{{ route('main') }}">Головна</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('entrant') }}">Вступнику</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="student.php">Студенту</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="{{ route('news') }}">Новини</a>
+                        </li>
+                    </ol>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
 
     <!-- News archive page -->
     <div class="news-archive-page">
@@ -30,16 +65,17 @@
             <div class="container">
                 <div class="tabs">
                     <ul class="tabs-caption">
-                        <li class="active">Всі новини</li>
-                        <li>Спорт</li>
-                        <li>Наука</li>
-                        <li>Зустрічі</li>
-                        <li>Подорожі</li>
-                        <li>"Весна та Осінь Політехніки"</li>
+                        <a href="{{ route('news') }}"><li @if (!isset($catId)) class="active" @endif>Всі новини</li></a>
+                        <a href="{{ route('showByCategory', 1) }}"><li @if ($catId == 1) class="active" @endif>Спорт</li></a>
+                        <a href="{{ route('showByCategory', 2) }}"><li  @if ($catId == 2) class="active" @endif>Наука</li></a>
+                        <a href="{{ route('showByCategory', 3) }}"><li  @if ($catId == 3) class="active" @endif>Зустрічі</li></a>
+                        <a href="{{ route('showByCategory', 5) }}"><li  @if ($catId == 5) class="active" @endif>Подорожі</li></a>
+                        <a href="{{ route('showByCategory', 4) }}"><li  @if ($catId == 4) class="active" @endif>"Весна та Осінь Політехніки"</li></a>
                     </ul>
 
                     <div class="tab-panel active">
                         <h4>Всі новини</h4>
+                        @if (!empty($news))
                         @foreach($news as $new)
                         <div class="archive-news">
                             <a href="{{ route('newsDetails', ['id'=> $new->id ]) }}">
@@ -47,12 +83,14 @@
                                   <img src="{{ asset('/img/'.$new->img) }}" alt="{{ $new->title }}">
                                 </div>
                                 <div class="news-info">
-                                    <h3>{{ $new->title }}></h3>
+
+                                    <h3>{{ $new->title }}</h3>
                                     <p class="news-date">{{ $new->data_add }}</p>
                                 </div>
                             </a>
                         </div>
                         @endforeach
+                        @endif
                     </div>
 
                     <div class="tab-panel">

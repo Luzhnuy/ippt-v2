@@ -16,11 +16,11 @@
 
             <nav id="navbar">
                 <ol class="navbar-collapse" id="navbar-collapse">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a href="{{ route('main') }}">Головна</a>
                     </li>
                     <li class="nav-item">
-                        <a href="entrant.php">Вступнику</a>
+                        <a href="{{ route('entrant') }}">Вступнику</a>
                     </li>
                     <li class="nav-item">
                         <a href="student.php">Студенту</a>

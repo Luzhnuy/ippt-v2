@@ -17,8 +17,14 @@ class NewsController extends Controller
     public function showAll()
     {
         $news = $this->newsRepository->getAll();
+        $catId = null;
+        return view('pages.news-archive', ['news' => $news, 'catId'=> $catId ]);
+    }
 
-        return view('pages.news-archive', ['news' => $news]);
+    public function showByCategory($categoryId)
+    {
+      $news = $this->newsRepository->getByCategory($categoryId);
+      return view('pages.news-archive', ['news' => $news, 'catId' => $categoryId ]);
     }
 
     public function detail($id)

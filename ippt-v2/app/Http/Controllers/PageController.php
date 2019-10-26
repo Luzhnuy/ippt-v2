@@ -8,6 +8,7 @@ use App\Repositories\SlideRepository;
 
 class PageController extends Controller
 {
+
   private $newsRepository;
   private $slideRepository;
 
@@ -19,6 +20,11 @@ class PageController extends Controller
 
   public function showMain()
   {
+      // $user = new \App\Entity\User();
+      // $user->password = \Hash::make('turupuru2');
+      // $user->email = 'l.luzhnuy@gmail.com';
+      // $user->name = 'Lubomur';
+      // $user->save();
       $news = $this->newsRepository->getLast(4);
       $slide = $this->slideRepository->getAll();
 
@@ -46,6 +52,11 @@ class PageController extends Controller
     return view('pages.student_college.student-college', [
       'news' => $news,
     ]);
+  }
+
+  public function showEntrant()
+  {
+    return view('pages.static.entrant');
   }
 
 }
